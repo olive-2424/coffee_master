@@ -1,0 +1,2 @@
+class Been < ApplicationRecord
+end
