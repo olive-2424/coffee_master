@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-lg-8.offset-lg-2
+      = form_with model: been, local: true do |f|
+        .form-group.mr-20.ml-20
+          = f.label :country_name
+          = f.text_field :country_name, class: 'form-control', id: 'country_name'
+        .form-group.mr-20.ml-20
+          = f.label :farm_name
+          = f.text_field :farm_name, class: 'form-control', id: 'farm_name'
+        .form-group.mr-20.ml-20
+          = f.label :description
+          = f.text_area :description, class: 'form-control', id: 'been_description'
+        = f.submit '登録する', class: 'btn btn-primary'
