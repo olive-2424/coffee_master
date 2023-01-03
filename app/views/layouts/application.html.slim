@@ -19,11 +19,16 @@ html
       button.navbar-toggler data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" type="button"
         <span class="navbar-toggler-icon"></span>
       #navbarNavDropdown.collapse.navbar-collapse.justify-content-end
-        ul.navbar-nav
+        ul.navbar-nav.justify-content-end
 	        li.nav-item.active
 	          a.nav-link href="#" マイページ<span class="sr-only">(current)</span>
+            = link_to '豆の新規登録', new_been_path, class: 'nav-link'
 	        li.nav-item
   	        a.nav-link href="#" クイズ一覧
 	        li.nav-item
 	          a.nav-link href="#" ログアウト
+    
+    .container
+      - if flash.notice.present?
+        .alert.alert-success.mt-10= flash.notice
     = yield

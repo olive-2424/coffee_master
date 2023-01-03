@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateBeens < ActiveRecord::Migration[5.2]
   def change
     create_table :beens do |t|
