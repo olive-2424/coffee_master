@@ -28,7 +28,5 @@ html
 	        li.nav-item
 	          a.nav-link href="#" ログアウト
     
-    .container
-      - if flash.notice.present?
-        .alert.alert-success.mt-10= flash.notice
+    = render 'shared/flash_message'
     = yield
