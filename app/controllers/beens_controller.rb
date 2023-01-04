@@ -18,21 +18,28 @@ class BeensController < ApplicationController
   end
 
   def update
-    been = been.find(params[:id])
-    been.update!(been_params)
-    redirect_to root_url, notice: "コーヒー豆「#{been.country_name}」を更新しました。"
+    @been = Been.find(params[:id])
+    if @been.update(been_params)
+      redirect_to root_url, success: "コーヒー豆「#{@been.country_name}」を更新しました。"
+    else
+      render :edit
+    end
   end
 
   def create
-    been = Been.new(been_params)
-    been.save!
-    redirect_to root_url, notice: "コーヒー豆#{been.country_name}を登録しました。"
+    @been = Been.new(been_params)
+
+    if @been.save
+      redirect_to root_url, success: "コーヒー豆「#{@been.country_name}」を登録しました。"
+    else
+      render :new
+    end
   end
 
   def destroy
     been = Been.find(params[:id])
     been.destroy
-    redirect_to root_url, notice: "コーヒー豆「#{been.country_name}」を削除しました。"
+    redirect_to root_url, success: "コーヒー豆「#{been.country_name}」を削除しました。"
   end
 
   private
