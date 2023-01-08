@@ -1,0 +1,16 @@
+ja:
+  defaults:
+    title: 'コーヒー名人'
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    post: '投稿'
+    search_word: '検索ワード'
+    message:
+      require_login: 'ログインしてください'
+      not_authorized: '権限がありません'
+    generate: '登録する'
+    update: '更新する'
+    mypage: 'マイページ'
+    quiz_index: 'クイズ一覧'
+    new_been: '豆の新規登録'

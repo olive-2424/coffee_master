@@ -12,21 +12,6 @@ html
     script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"
 
   body
-    nav.navbar.navbar-expand-lg.navbar-light.bg-secondary
-      = link_to root_path, class: 'navbar-brand' do
-        = image_tag 'coffee_logo.png', class: 'top-image'
-      #coffee_title.navbar-brand.justify-content-center コーヒー名人
-      button.navbar-toggler data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" type="button"
-        <span class="navbar-toggler-icon"></span>
-      #navbarNavDropdown.collapse.navbar-collapse.justify-content-end
-        ul.navbar-nav.justify-content-end
-	        li.nav-item.active
-	          a.nav-link href="#" マイページ<span class="sr-only">(current)</span>
-            = link_to '豆の新規登録', new_been_path, class: 'nav-link'
-	        li.nav-item
-  	        a.nav-link href="#" クイズ一覧
-	        li.nav-item
-	          a.nav-link href="#" ログアウト
-    
+    = render 'shared/header'
     = render 'shared/flash_message'
     = yield

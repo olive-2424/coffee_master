@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      been: 'コーヒー豆'
+    attributes:
+      been:
+        country_name: '国名'
+        farm_name: '農園'
+        description: '詳細'
