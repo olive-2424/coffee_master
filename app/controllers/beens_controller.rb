@@ -43,6 +43,7 @@ class BeensController < ApplicationController
   end
 
   private
+
   def been_params
     params.require(:been).permit(:country_name, :farm_name, :description)
   end
