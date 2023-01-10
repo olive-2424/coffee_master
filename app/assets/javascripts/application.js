@@ -9,6 +9,7 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
+//= require rails-ujs
 //= require jquery3
 // ハンバーグを閉じる
 <script>
@@ -18,7 +19,6 @@ $('.navbar-nav>li>a , .dropdown-menu>a').on('click', function(){
     }
 });
 </script>
-//= require rails-ujs
 //= require activestorage
 //= require popper
 //= require bootstrap-sprockets

@@ -1,15 +1,15 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-secondary
   = link_to root_path, class: 'navbar-brand' do
     = image_tag 'coffee_logo.png', class: 'top-image'
-  #coffee_title.navbar-brand.justify-content-center = t 'defaults.title'
+  #coffee_title.navbar-brand.d-flex.justify-content-center = t 'defaults.title'
   button.navbar-toggler data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" type="button"
     <span class="navbar-toggler-icon"></span>
   #navbarNavDropdown.collapse.navbar-collapse.justify-content-end
-    ul.navbar-nav.justify-content-end
+    ul.navbar-nav
 	    li.nav-item.active
         = link_to (t 'defaults.mypage'), '#', class: 'nav-link'
         = link_to (t 'defaults.new_been'), new_been_path, class: 'nav-link'
 	    li.nav-item
         = link_to (t 'defaults.quiz_index'), '#', class: 'nav-link'
 	    li.nav-item
-        = link_to (t 'defaults.logout'), '#', class: 'nav-link'
+        = link_to (t 'defaults.logout'), logout_path, method: :delete, class: 'nav-link'

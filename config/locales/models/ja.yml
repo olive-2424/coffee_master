@@ -1,8 +1,14 @@
 ja:
   activerecord:
     models:
+      user: 'ユーザー'
       been: 'コーヒー豆'
     attributes:
+      user:
+        name: 'ユーザー名'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
       been:
         country_name: '国名'
         farm_name: '農園'

@@ -1,0 +1,10 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-secondary
+  = link_to login_path, class: 'navbar-brand' do
+    = image_tag 'coffee_logo.png', class: 'top-image'
+  #coffee_title.navbar-brand.justify-content-center = t 'defaults.title'
+  button.navbar-toggler data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" type="button"
+    <span class="navbar-toggler-icon"></span>
+  #navbarNavDropdown.collapse.navbar-collapse.justify-content-end
+    ul.navbar-nav.justify-content-end
+	    li.nav-item.active
+        = link_to (t 'defaults.login'), login_path, class: 'nav-link'
