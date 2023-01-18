@@ -10,3 +10,4 @@
             h6.card-title
               = link_to been.farm_name, been_path(been)
             p.card-text = been.description
+  = paginate @beens
