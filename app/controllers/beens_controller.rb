@@ -1,7 +1,5 @@
-# frozen_string_literal: true
-
 class BeensController < ApplicationController
-  before_action :set_been, only: [:edit, :update, :destroy]
+  before_action :set_been, only: %i[edit update destroy]
 
   def index
     @beens = Been.all.includes(:user)
@@ -42,7 +40,7 @@ class BeensController < ApplicationController
   private
 
   def been_params
-    params.require(:been).permit(:country_name, :farm_name, :description)
+    params.require(:been).permit(:country_name, :farm_name, :description, :been_image, :been_image_cache)
   end
 
   def set_been
