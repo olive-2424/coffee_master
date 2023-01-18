@@ -2,7 +2,7 @@ class BeensController < ApplicationController
   before_action :set_been, only: %i[edit update destroy]
 
   def index
-    @beens = Been.all.includes(:user)
+    @beens = Been.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def show

@@ -62,6 +62,7 @@ gem 'faker'
 gem 'font-awesome-sass', '~> 5.15.1'
 gem 'html2slim'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'pry-rails', group: :development
 gem 'rails-i18n', '~> 5.1'
 gem 'slim-rails'
