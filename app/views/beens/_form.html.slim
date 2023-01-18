@@ -10,6 +10,10 @@
           = f.label :farm_name
           = f.text_field :farm_name, class: 'form-control', id: 'farm_name'
         .form-group.mr-20.ml-20
+          = f.label :been_image
+          = f.file_field :been_image, class: 'form-control-file'
+          = f.hidden_field :been_image_cache
+        .form-group.mr-20.ml-20
           = f.label :description
           = f.text_area :description, class: 'form-control', id: 'been_description'
         - if request.path_info == new_been_path

@@ -10,29 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_10_085457) do
-
+ActiveRecord::Schema.define(version: 20_230_117_100_509) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "beens", force: :cascade do |t|
-    t.string "country_name", limit: 30, null: false
-    t.string "farm_name", limit: 30
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_beens_on_user_id"
+  create_table 'beens', force: :cascade do |t|
+    t.string 'country_name', limit: 30, null: false
+    t.string 'farm_name', limit: 30
+    t.text 'description'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.bigint 'user_id', null: false
+    t.string 'been_image'
+    t.index ['user_id'], name: 'index_beens_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "crypted_password"
-    t.string "salt"
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', null: false
+    t.string 'crypted_password'
+    t.string 'salt'
+    t.string 'name', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
   end
-
 end
