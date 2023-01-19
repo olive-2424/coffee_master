@@ -1,25 +1,13 @@
 h1 コーヒー豆詳細
 
-table.table.table-hover
-  tbody
-    tr
-      th= Been.human_attribute_name(:id)
-      td= @been.id
-    tr
-      th= Been.human_attribute_name(:country_name)
-      td= @been.country_name
-    tr
-      th= Been.human_attribute_name(:farm_name)
-      td= @been.farm_name
-    tr
-      th= Been.human_attribute_name(:description)
-      td= simple_format(h(@been.description), {}, sanitize: false, wrapper_tag: "div")
-    tr
-      th= Been.human_attribute_name(:created_at)
-      td= @been.created_at
-    tr
-      th= Been.human_attribute_name(:updated_at)
-      td= @been.updated_at
-
-= link_to '編集', edit_been_path, class: 'btn btn-primary mr-3'
-= link_to '削除', been_path(@been), method: :delete, data: { confirm: "コーヒー豆「#{@been.country_name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
+.card.mb-3
+  = image_tag @been.been_image.url, class: 'card-img-top', height: 450
+  .card-body
+    h4.card-title = @been.country_name
+    h5.card-title = @been.farm_name
+    p.card-text = @been.description
+    p.card-text.small = @been.created_at
+    p.card-text.small = @been.updated_at
+    - if current_user.own?(@been)
+      = link_to '編集', edit_been_path, class: 'btn btn-primary mr-3'
+      = link_to '削除', been_path(@been), method: :delete, data: { confirm: "コーヒー豆「#{@been.country_name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'

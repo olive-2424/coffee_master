@@ -34,7 +34,7 @@ class BeensController < ApplicationController
 
   def destroy
     @been.destroy
-    redirect_to root_url, success: "コーヒー豆「#{been.country_name}」を削除しました。"
+    redirect_to root_url, success: "コーヒー豆「#{@been.country_name}」を削除しました。"
   end
 
   private
