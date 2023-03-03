@@ -12,7 +12,7 @@ ja:
     generate: '登録する'
     update: '更新する'
     mypage: 'マイページ'
-    quiz_index: 'クイズ一覧'
+    game_index: 'ミニゲーム'
     new_been: '豆の新規登録'
   users:
     new:

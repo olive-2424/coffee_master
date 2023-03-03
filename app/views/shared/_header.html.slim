@@ -1,5 +1,5 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-secondary
-  = link_to root_path, class: 'navbar-brand' do
+  = link_to root_path, class: 'navbar' do
     = image_tag 'coffee_logo.png', class: 'top-image'
   #coffee_title.navbar-brand.d-flex.justify-content-center = t 'defaults.title'
   button.navbar-toggler data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" type="button"
@@ -9,7 +9,16 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-secondary
 	    li.nav-item.active
         = link_to (t 'defaults.mypage'), '#', class: 'nav-link'
         = link_to (t 'defaults.new_been'), new_been_path, class: 'nav-link'
-	    li.nav-item
-        = link_to (t 'defaults.quiz_index'), '#', class: 'nav-link'
+	    li.nav-item.dropdown
+        = link_to (t 'defaults.game_index'), '#', 
+        class: 'nav-link dropdown-toggle',
+        id: 'navbarDropdownMenuLink',
+        'data-toggle': :dropdown,
+        'aria-haspopup': 'true',
+        'aria-expanded': 'false',
+        'data-reference': 'parcent'
+        .dropdown-menu aria-labelledby='navbarDropdownMenuLink'
+          = link_to 'ぷよコーヒー', '#', class: 'dropdown-item'
+          = link_to 'コーヒー衰弱', '#', class: 'dropdown-item'
 	    li.nav-item
         = link_to (t 'defaults.logout'), logout_path, method: :delete, class: 'nav-link'
