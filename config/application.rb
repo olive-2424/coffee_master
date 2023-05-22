@@ -26,7 +26,11 @@ module CoffeeMaster
     config.generators do |g|
       g.assets false # CSS/JSファイルを作成しない
       g.helper false # ヘルパーファイルを作成しない
-      g.test_framework # テストファイルを作成しない
+      g.test_framework :rspec,
+      fixtures: false, # テストデータベースにレコードを作成するファイルの作成をスキップ
+      view_specs: false, # ビュースペックを作成しない
+      helper_specs: false, #ヘルパーファイル用のスペックを作成しない
+      routing_specs: false  # config/routes.rb用のスペックファイルの作成を省略
       g.skip_routes true # ルーティングの変更をスキップ
     end
     # Settings in config/environments/* take precedence over those specified here.
